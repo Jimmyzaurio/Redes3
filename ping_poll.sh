@@ -7,10 +7,6 @@ DIREC[2]="8.12.0.116"
 for IP in "${DIREC[@]}"
 do
   sudo ping $IP -c 1
-  echo ""
-  echo ""
-  echo ""
-  echo ""
-  #python suma.py
+  packet_loss=$(sudo ping -c 1 -q $IP | grep -oP '\d+(?=% packet loss)')
+  # SWAKS to admin mail 
 done
-
